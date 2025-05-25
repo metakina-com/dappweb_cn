@@ -1,20 +1,666 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="西西弗斯-专业的区块链项目开发团队
-      西西弗斯是一家百人区块链项目开发团队，基于公链开发元宇宙生态开发NFT商城开发、链游开发、数字人开发、钱包开发、dapp开发、数字藏品开发、web3开发 、web3技术团队、 web3是什么 、web3.0技术、 web3.0开发等多项区块链开发综合业务"><link rel="icon" href="favicon.ico"><title>西西弗斯-全球顶尖的web3区块链服务商</title><script>var _hmt = _hmt || [];</script><script async src="https://www.googletagmanager.com/gtag/js?id=AW-16624950863"></script><script>window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西安达普韦伯公司：未来六个月Web3生态战略与元话课程赋能</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            background-color: #F3F4F6; /* Light Gray Background */
+        }
+        /* Chosen Palette: Energetic & Playful (Adapted) */
+        /* Primary: Deep Blue: #1A237E */
+        /* Accent 1: Bright Orange: #FF7043 */
+        /* Accent 2: Vibrant Pink: #EC407A */
+        /* Accent 3: Sunny Yellow: #FFCA28 */
+        /* Supporting: Teal: #009688 */
+        /* Text: Dark Gray: #1F2937, Medium Gray: #4B5563 */
 
-  gtag('config', 'AW-16624950863');</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-THPCMM32');</script><link href="css/app.dbf699ab.css" rel="preload" as="style"><link href="css/chunk-vendors.ece87291.css" rel="preload" as="style"><link href="js/app.1785888d.js" rel="preload" as="script"><link href="js/chunk-vendors.453628f3.js" rel="preload" as="script"><link href="css/chunk-vendors.ece87291.css" rel="stylesheet"><link href="css/app.dbf699ab.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but exoticmonster doesn't work properly without JavaScript enabled. Please enable it to continue.</strong><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THPCMM32" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="app"></div><script>var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?e70df9bca25331c6f919e155c1d649da";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();</script><script src="js/chunk-vendors.453628f3.js"></script><script src="js/app.1785888d.js"></script></body></html><script>// (function() {
-//   var _53code = document.createElement("script");
-//   _53code.src = "https://tb.53kf.com/code/code/0f68fd2124d63f56f91fb63080800f748/1";
-//   var s = document.getElementsByTagName("script")[0]; 
-//   s.parentNode.insertBefore(_53code, s);})();</script>
+        .text-primary { color: #1A237E; }
+        .bg-primary { background-color: #1A237E; }
+        .border-primary { border-color: #1A237E; }
+
+        .text-accent-orange { color: #FF7043; }
+        .bg-accent-orange { background-color: #FF7043; }
+
+        .text-accent-pink { color: #EC407A; }
+        .bg-accent-pink { background-color: #EC407A; }
+        
+        .text-accent-yellow { color: #FFCA28; }
+        .bg-accent-yellow { background-color: #FFCA28; }
+
+        .text-accent-teal { color: #009688; }
+        .bg-accent-teal { background-color: #009688; }
+
+        .section-title {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 700;
+            color: #1A237E; /* Deep Blue */
+            margin-bottom: 1.5rem; /* 24px */
+            text-align: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem; /* 24px */
+            margin-bottom: 1.5rem; /* 24px */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Max width for readability */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Base height */
+            max-height: 400px; /* Max height */
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .stat-number {
+            font-size: 2.5rem; /* 40px */
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .stat-label {
+            font-size: 0.875rem; /* 14px */
+            color: #4B5563; /* Medium Gray */
+            margin-top: 0.25rem;
+        }
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #CBD5E1; /* Cool Gray 300 */
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+        .timeline-item::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        .timeline-content {
+            position: relative;
+            width: calc(50% - 2rem); /* Adjust for spacing */
+            padding: 1rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        .timeline-item:nth-child(odd) .timeline-content {
+            float: left;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) .timeline-content {
+            float: right;
+            text-align: left;
+        }
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            content: '';
+            position: absolute;
+            right: -0.5rem; /* Arrow position */
+            top: 1rem;
+            width: 0;
+            height: 0;
+            border-top: 0.5rem solid transparent;
+            border-bottom: 0.5rem solid transparent;
+            border-left: 0.5rem solid white; /* Arrow color */
+        }
+        .timeline-item:nth-child(even) .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem; /* Arrow position */
+            top: 1rem;
+            width: 0;
+            height: 0;
+            border-top: 0.5rem solid transparent;
+            border-bottom: 0.5rem solid transparent;
+            border-right: 0.5rem solid white; /* Arrow color */
+        }
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0.75rem; /* Align with content top */
+            width: 2.5rem; /* 40px */
+            height: 2.5rem; /* 40px */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            z-index: 10;
+        }
+        .flowchart-node {
+            border: 2px solid;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            min-width: 150px;
+            margin: 0.5rem;
+        }
+        .flowchart-arrow {
+            font-size: 1.5rem; /* 24px */
+            margin: 0 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #1A237E;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 
+        Narrative Plan:
+        1. Hero: Introduce DappWeb and its 6-month strategic vision, emphasizing Web3 ecosystem building.
+        2. Core Projects: Detail KOLMarket, DappWeb (platform), and METAKINA - their goals and key metrics for Oct 2025.
+        3. Yuanhua Courses: Deep dive into the "元话" paid course initiative, its objectives, target audience, course structure (free promo, paid courses, digital avatars), promotion, and team output. This is a strategic pillar for market education and METAKINA support.
+        4. Integrated Roadmap: Visualize the consolidated timeline of milestones for all three projects and the Yuanhua courses from May to October 2025.
+        5. Ecosystem Synergy: Illustrate how the projects (especially Yuanhua and METAKINA) and DappWeb (as tech backbone) support each other to create a cohesive ecosystem.
+        6. Concluding Note: Briefly reiterate the company's commitment to Web3 innovation.
+
+        Visualization Choices:
+        - Core Project Metrics (Oct 2025 Targets):
+            - Data: KOLMarket (20-30 KOLs, 5k+ users, 1M USDT volume), DappWeb (V1.0, 2 internal support, 1-2 external clients), METAKINA (Beta, >=1 asset, 10M RMB scale).
+            - Goal: Inform.
+            - Chosen Visualization: "Single Big Number" style text callouts within styled cards.
+            - Justification: Direct and impactful for showcasing key targets.
+            - Library/Method: HTML/Tailwind CSS. NO SVG.
+        - Yuanhua Target Audience:
+            - Data: Individual Learners, Enterprise Clients, Potential Partners (Conceptual proportions for visualization: e.g., 60%, 25%, 15%).
+            - Goal: Compare (composition).
+            - Chosen Visualization: Donut Chart.
+            - Justification: Good for showing parts of a whole.
+            - Library/Method: Chart.js (Canvas). NO SVG.
+        - Yuanhua Course Production Output (Team):
+            - Data: 3 core members, each 6 pieces/day (3 promo, 3 lessons).
+            - Goal: Inform.
+            - Chosen Visualization: Styled list or small cards.
+            - Justification: Clear presentation of output metrics.
+            - Library/Method: HTML/Tailwind CSS. NO SVG.
+        - Integrated Timeline (May-Oct 2025):
+            - Data: Milestones for KOLMarket, DappWeb, METAKINA, Yuanhua from PDFs.
+            - Goal: Change (over time), Organize (events).
+            - Chosen Visualization: HTML/CSS vertical timeline.
+            - Justification: Visually represents progression and key events chronologically.
+            - Library/Method: HTML/Tailwind CSS. NO SVG, NO MERMAID JS.
+        - Ecosystem Synergy:
+            - Data: Relationships - Yuanhua educates for METAKINA, DappWeb provides tech for KOLMarket & METAKINA.
+            - Goal: Organize (relationships).
+            - Chosen Visualization: HTML/CSS based flowchart (nodes and text/Unicode arrows).
+            - Justification: Shows connections and dependencies.
+            - Library/Method: HTML/Tailwind CSS. NO SVG, NO MERMAID JS.
+        - Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. All visuals are Chart.js (Canvas) or HTML/Tailwind CSS.
+        - Color Palette Name: Energetic & Playful (Adapted)
+    -->
+
+    <header class="bg-primary text-white py-8 shadow-lg">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mx-auto mb-4 h-16 w-16 bg-accent-orange rounded-full flex items-center justify-center text-2xl font-bold">DW</div>
+            <h1 class="text-4xl font-bold mb-2">西安达普韦伯公司</h1>
+            <p class="text-xl">未来六个月Web3生态战略与元话课程赋能</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 py-8">
+
+        <section id="overview" class="mb-12">
+            <h2 class="section-title">公司概览与未来六个月核心战略</h2>
+            <div class="card">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    西安达普韦伯网络科技有限公司（以下简称“达普韦伯公司”）正积极投身于Web3生态系统的构建。未来六个月（2025年5月至10月），公司将聚焦三大核心项目——KOLMarket（影响力资产化）、DappWeb（Web3技术解决方案）与METAKINA（现实资产数字化）的协同发展与正式上线。与此同时，公司将重点推行“元话付费课程计划”，旨在通过系统化的市场教育，特别是针对现实资产数字化（RWA）领域，为METAKINA等项目培育用户基础，提升市场认知度与信任感，从而驱动整个Web3生态的健康成长与价值实现。
+                </p>
+            </div>
+        </section>
+
+        <section id="core-projects" class="mb-12">
+            <h2 class="section-title">三大核心项目：2025年10月目标展望</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card text-center">
+                    <div class="mx-auto h-12 w-12 bg-accent-orange rounded-full flex items-center justify-center text-white text-xl font-bold mb-4">KM</div>
+                    <h3 class="text-2xl font-semibold text-primary mb-3">KOLMarket</h3>
+                    <p class="text-gray-600 mb-4 text-sm">影响力资产化与交易平台</p>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="stat-number text-accent-orange">20-30<span class="text-lg">位</span></p>
+                            <p class="stat-label">知名KOL入驻</p>
+                        </div>
+                        <div>
+                            <p class="stat-number text-accent-orange">5,000+</p>
+                            <p class="stat-label">平台注册用户</p>
+                        </div>
+                        <div>
+                            <p class="stat-number text-accent-orange">100万+</p>
+                            <p class="stat-label">累计交易额 (USDT)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card text-center">
+                     <div class="mx-auto h-12 w-12 bg-accent-pink rounded-full flex items-center justify-center text-white text-xl font-bold mb-4">DW</div>
+                    <h3 class="text-2xl font-semibold text-primary mb-3">DappWeb 平台</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Web3技术解决方案与开发平台</p>
+                     <div class="space-y-3">
+                        <div>
+                            <p class="stat-number text-accent-pink">V1.0</p>
+                            <p class="stat-label">正式版本发布</p>
+                        </div>
+                        <div>
+                            <p class="stat-number text-accent-pink">2<span class="text-lg">个</span></p>
+                            <p class="stat-label">内部核心项目支持</p>
+                        </div>
+                        <div>
+                            <p class="stat-number text-accent-pink">1-2<span class="text-lg">个</span></p>
+                            <p class="stat-label">外部客户试点合作</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card text-center">
+                    <div class="mx-auto h-12 w-12 bg-accent-teal rounded-full flex items-center justify-center text-white text-xl font-bold mb-4">MK</div>
+                    <h3 class="text-2xl font-semibold text-primary mb-3">METAKINA</h3>
+                    <p class="text-gray-600 mb-4 text-sm">现实资产数字化 (RWA) 平台</p>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="stat-number text-accent-teal">Beta<span class="text-lg">版</span></p>
+                            <p class="stat-label">平台上线</p>
+                        </div>
+                        <div>
+                            <p class="stat-number text-accent-teal">&ge;1<span class="text-lg">项</span></p>
+                            <p class="stat-label">资产成功数字化发行</p>
+                        </div>
+                        <div>
+                            <p class="stat-number text-accent-teal">1000万+</p>
+                            <p class="stat-label">资产规模 (人民币)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="yuanhua-courses" class="mb-12">
+            <h2 class="section-title">“元话”付费课程：赋能Web3生态</h2>
+            <div class="card mb-8">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4" id="yuanhua-course-intro">
+                    “元话”付费课程计划是达普韦伯公司的一项核心战略举措，旨在通过系统性的RWA及Web3知识普及，培养市场认知，建立品牌信任，并为METAKINA等核心业务输送高质量用户。该计划将利用创新的数字人IP和多渠道推广策略，打造行业领先的教育内容。
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-4">
+                    <button id="summarizeYuanhuaBtn" class="bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 flex items-center justify-center">
+                        ✨ 获取智能摘要
+                        <span id="summaryLoading" class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+                <div id="yuanhuaSummaryOutput" class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-md text-blue-800 hidden">
+                    </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-3">目标受众构成（示意）</h3>
+                    <div class="chart-container h-72 md:h-80">
+                        <canvas id="yuanhuaAudienceChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2 text-center">课程将覆盖个人学习者、企业客户及潜在合作伙伴。</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-3">核心课程体系</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="p-3 bg-orange-50 rounded-md shadow-sm">
+                            <strong class="text-accent-orange">《盘活资产，链接未来：销售读懂“实物资产上链”》</strong>
+                            <p class="text-xs">14章节/61小节，系统理论与案例分析，5分钟短视频形式。</p>
+                        </li>
+                        <li class="p-3 bg-pink-50 rounded-md shadow-sm">
+                            <strong class="text-accent-pink">《RWA价值重构：数字时代的资产配置与商业模式》</strong>
+                            <p class="text-xs">22章节/70小节，深度理论、商业模式与全球趋势解读。</p>
+                        </li>
+                        <li class="p-3 bg-teal-50 rounded-md shadow-sm">
+                            <strong class="text-accent-teal">“元话RWA云系统平台”实操赋能深度课程</strong>
+                            <p class="text-xs">杨仁鑫主导，聚焦平台操作与核心功能演示。</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card md:col-span-2">
+                    <h3 class="text-xl font-semibold text-primary mb-4">推广、运营与内容创新</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-1">数字人IP：元小妹 & 元小帅</h4>
+                            <p class="text-sm text-gray-600">结合公司同事形象与中华文化内涵，通过Heygen技术打造，分别以“RWA破壁者”（活泼亲和）和“RWA产业智脑”（专业权威）的形象进行知识传播。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-1">多渠道推广与引流</h4>
+                            <p class="text-sm text-gray-600">前期通过公众号、视频号、小红书、B站、抖音、头条等平台每日更新科普内容，后期付费课程将结合真人专家与数字人进行品牌宣传。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-1">私域流量运营</h4>
+                            <p class="text-sm text-gray-600">引导付费用户至企业微信群，提供精细化咨询、支持与社群互动，实现高价值用户沉淀。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-1">内容制作团队与产出</h4>
+                            <p class="text-sm text-gray-600">核心团队3人（张明昊、张宇博、杨仁鑫），每人每日目标产出6条内容（3条引流视频+3个课程小节），确保内容快速迭代与规模化覆盖。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="mb-12">
+            <h2 class="section-title">整合行动路线图 (2025年5月 - 10月)</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-accent-orange">5月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-accent-orange mb-1">启动阶段</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 核心功能测试启动</li>
+                            <li><strong>DappWeb:</strong> 架构核心模块开发启动</li>
+                            <li><strong>METAKINA:</strong> 项目成立与初步市场调研</li>
+                            <li><strong>元话课程:</strong> RWA知识普及启动；《盘活资产》课程制作开始 (5/23)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-accent-pink">6月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-accent-pink mb-1">开发加速</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 核心功能开发完成</li>
+                            <li><strong>DappWeb:</strong> 核心模块开发完成</li>
+                            <li><strong>METAKINA:</strong> 架构设计与MVP开发启动</li>
+                            <li><strong>元话课程:</strong> 《盘活资产》制作完成；《RWA价值重构》制作开始</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-icon bg-accent-yellow">7月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-accent-yellow mb-1">测试与迭代</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 封闭测试启动</li>
+                            <li><strong>DappWeb:</strong> Alpha版本测试</li>
+                            <li><strong>METAKINA:</strong> MVP开发与协议最终确定</li>
+                            <li><strong>元话课程:</strong> 《RWA价值重构》持续制作</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-accent-teal">8月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-accent-teal mb-1">公测与优化</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 全面安全审计</li>
+                            <li><strong>DappWeb:</strong> 外部开发者测试</li>
+                            <li><strong>METAKINA:</strong> Beta公测版发布</li>
+                            <li><strong>元话课程:</strong> 《RWA价值重构》完成；“RWA云平台”实操课制作</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-primary text-white">9月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-primary mb-1">上线准备</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 移动端APP上线；投资大赛启动</li>
+                            <li><strong>DappWeb:</strong> 官网Beta版上线</li>
+                            <li><strong>METAKINA:</strong> 首单资产认购启动</li>
+                            <li><strong>元话课程:</strong> 付费课程正式发售</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-icon bg-green-500">10月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-green-600 mb-1">全面启动</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 平台正式上线</li>
+                            <li><strong>DappWeb:</strong> V1.0正式发布</li>
+                            <li><strong>METAKINA:</strong> 资产交割完成；Beta 2.0平台上线</li>
+                            <li><strong>元话课程:</strong> 持续用户运营与社群管理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="synergy" class="mb-12">
+            <h2 class="section-title">Web3生态协同效应</h2>
+            <div class="card">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6 text-center">
+                    达普韦伯公司的核心项目与元话课程计划并非孤立存在，而是相互赋能，共同构建一个强大的Web3生态系统。
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-around space-y-6 md:space-y-0 md:space-x-4">
+                    <div class="flowchart-node border-accent-orange text-accent-orange">
+                        <h4 class="font-semibold">元话课程</h4>
+                        <p class="text-xs">市场教育 & 用户引导</p>
+                    </div>
+                    <div class="flowchart-arrow text-gray-500">➔</div>
+                    <div class="flowchart-node border-accent-teal text-accent-teal">
+                        <h4 class="font-semibold">METAKINA (RWA)</h4>
+                        <p class="text-xs">资产数字化 & 机构信任</p>
+                    </div>
+                </div>
+                <div class="flex justify-center my-4">
+                     <div class="flowchart-arrow text-gray-500 transform rotate-90 md:rotate-0">↓</div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-around space-y-6 md:space-y-0 md:space-x-4">
+                     <div class="flowchart-node border-accent-pink text-accent-pink">
+                        <h4 class="font-semibold">DappWeb 平台</h4>
+                        <p class="text-xs">核心技术支撑</p>
+                    </div>
+                     <div class="flowchart-arrow text-gray-500">➔</div>
+                     <div class="flowchart-node border-primary text-primary">
+                        <h4 class="font-semibold">KOLMarket</h4>
+                        <p class="text-xs">影响力经济 & 用户社群</p>
+                    </div>
+                </div>
+                 <p class="text-sm text-gray-600 mt-6 text-center">
+                    DappWeb平台为KOLMarket和METAKINA提供底层技术支持。元话课程通过RWA知识普及，直接为METAKINA培育潜在用户和资产方，同时也提升整个生态的Web3认知水平，间接惠及KOLMarket。各项目共同驱动用户增长和价值创造。
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-6 text-center">
+        <p class="text-sm">&copy; 2025 西安达普韦伯网络科技有限公司。保留所有权利。</p>
+        <p class="text-xs mt-1">信息图由AI生成，数据来源于公司规划文件。</p>
+    </footer>
+
+    <script>
+        function wrapText(text, maxWidth) {
+            if (typeof text !== 'string') return text; // Return as is if not a string (e.g., already an array)
+            if (text.length <= maxWidth) return text;
+
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 <= maxWidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+        
+        const yuanhuaAudienceData = {
+            labels: ['个人学习者', '企业客户', '潜在合作伙伴'].map(label => wrapText(label, 16)),
+            datasets: [{
+                label: '目标受众构成',
+                data: [60, 25, 15], // Example percentages
+                backgroundColor: [
+                    '#FF7043', // Bright Orange
+                    '#EC407A', // Vibrant Pink
+                    '#009688'  // Teal
+                ],
+                borderColor: [
+                    '#FFFFFF',
+                    '#FFFFFF',
+                    '#FFFFFF'
+                ],
+                borderWidth: 2
+            }]
+        };
+
+        const yuanhuaAudienceConfig = {
+            type: 'doughnut',
+            data: yuanhuaAudienceData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                family: "'Noto Sans SC', 'Inter', sans-serif"
+                            },
+                            // Custom label formatter if needed for wrapped text
+                            generateLabels: function(chart) {
+                                const data = chart.data;
+                                if (data.labels.length && data.datasets.length) {
+                                    return data.labels.map(function(label, i) {
+                                        const meta = chart.getDatasetMeta(0);
+                                        const style = meta.controller.getStyle(i);
+                                        return {
+                                            text: Array.isArray(label) ? label.join(' ') : label, // Join wrapped label back for legend
+                                            fillStyle: style.backgroundColor,
+                                            strokeStyle: style.borderColor,
+                                            lineWidth: style.borderWidth,
+                                            hidden: isNaN(data.datasets[0].data[i]) || meta.data[i].hidden,
+                                            index: i
+                                        };
+                                    });
+                                }
+                                return [];
+                            }
+                        }
+                    },
+                    title: {
+                        display: false,
+                        text: '元话课程目标受众构成 (示意)',
+                        font: {
+                            size: 16,
+                            family: "'Noto Sans SC', 'Inter', sans-serif"
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        window.onload = function() {
+            const yuanhuaAudienceCtx = document.getElementById('yuanhuaAudienceChart').getContext('2d');
+            new Chart(yuanhuaAudienceCtx, yuanhuaAudienceConfig);
+
+            const summarizeBtn = document.getElementById('summarizeYuanhuaBtn');
+            const summaryOutputDiv = document.getElementById('yuanhuaSummaryOutput');
+            const summaryLoadingSpinner = document.getElementById('summaryLoading');
+            const yuanhuaCourseIntro = document.getElementById('yuanhua-course-intro').innerText;
+            const yuanhuaCourseDetails = document.querySelector('#yuanhua-courses .card:nth-of-type(2)').innerText + "\n" + document.querySelector('#yuanhua-courses .card:nth-of-type(3)').innerText;
+
+            summarizeBtn.addEventListener('click', async () => {
+                summaryOutputDiv.classList.add('hidden'); // Hide previous summary
+                summaryOutputDiv.innerText = ''; // Clear previous summary
+                summaryLoadingSpinner.classList.remove('hidden'); // Show loading spinner
+                summarizeBtn.disabled = true; // Disable button during loading
+
+                const fullCourseText = yuanhuaCourseIntro + "\n\n" + yuanhuaCourseDetails;
+                const prompt = `请根据以下关于'元话'付费课程的介绍，生成一个简洁的中文摘要，重点突出课程目标、内容和推广策略。请确保摘要在100字以内。\n\n${fullCourseText}`;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        summaryOutputDiv.innerText = text;
+                        summaryOutputDiv.classList.remove('hidden');
+                    } else {
+                        summaryOutputDiv.innerText = '未能生成摘要，请稍后再试。';
+                        summaryOutputDiv.classList.remove('hidden');
+                        console.error('Gemini API response structure unexpected:', result);
+                    }
+                } catch (error) {
+                    summaryOutputDiv.innerText = '生成摘要时发生错误，请检查网络连接或稍后再试。';
+                    summaryOutputDiv.classList.remove('hidden');
+                    console.error('Error calling Gemini API:', error);
+                } finally {
+                    summaryLoadingSpinner.classList.add('hidden'); // Hide loading spinner
+                    summarizeBtn.disabled = false; // Re-enable button
+                }
+            });
+        };
+    </script>
+
+</body>
+</html>
