@@ -293,55 +293,14 @@
             color: #4B5563;
         }
         .summary-box {
-            background-color: #E0F2F7;
-            border: 1px solid #B2EBF2;
+            background-color: #E0F2F7; /* Light Blue/Teal background */
+            border: 1px solid #B2EBF2; /* Slightly darker border */
             border-radius: 0.5rem;
             padding: 1rem;
             margin-top: 1rem;
             font-size: 0.95rem;
-            color: #006064;
+            color: #006064; /* Dark Teal text */
             line-height: 1.5;
-        }
-        .kolmarket-feature {
-            background-color: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-        }
-        .kolmarket-feature-title {
-            font-weight: 600;
-            color: #1A237E;
-            margin-bottom: 0.5rem;
-        }
-        .kolmarket-feature-description {
-            font-size: 0.875rem;
-            color: #4B5563;
-        }
-        .personnel-table-container {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        .personnel-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.875rem;
-            min-width: 700px;
-        }
-        .personnel-table th, .personnel-table td {
-            padding: 0.75rem 1rem;
-            border: 1px solid #E2E8F0;
-            text-align: left;
-        }
-        .personnel-table th {
-            background-color: #F1F5F9;
-            font-weight: 600;
-            color: #334155;
-            white-space: nowrap;
-        }
-        .personnel-table tr:nth-child(even) {
-            background-color: #F8FAFC;
         }
     </style>
 </head>
@@ -437,13 +396,11 @@
                 <p class="text-lg text-gray-700 leading-relaxed mb-4" id="dappweb-services-intro">
                     DappWeb平台不仅为内部项目提供技术支撑，更面向外部客户提供全面的Web3技术解决方案与定制开发服务。以下是我们提供的12项核心服务外包业务，旨在帮助各类企业和机构无缝进入去中心化数字经济。
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-4">
-                    <button id="summarizeDappWebBtn" class="bg-accent-pink text-white px-6 py-3 rounded-lg shadow-md hover:bg-pink-700 transition duration-300 flex items-center justify-center">
-                        ✨ 获取DappWeb服务摘要
-                        <span id="dappwebSummaryLoading" class="loading-spinner hidden"></span>
-                    </button>
-                </div>
-                <div id="dappwebSummaryOutput" class="mt-4 p-4 bg-pink-50 border border-pink-200 rounded-md text-pink-800 hidden">
+                <div class="summary-box">
+                    <h4 class="font-semibold text-accent-pink mb-2">摘要：</h4>
+                    <p>
+                        DappWeb平台提供12项Web3技术服务，涵盖交易所、DApp、DeFi、NFT市场开发，以及AI、数据交易、公链等解决方案，旨在降低Web3应用开发门槛，助力企业和机构进入去中心化数字经济。
+                    </p>
                 </div>
             </div>
 
@@ -566,6 +523,9 @@
                 <p class="text-lg text-gray-700 leading-relaxed mb-4">
                     元话RWA服务致力于构建连接现实资产世界与数字金融未来的桥梁，帮助企业和机构安全、合规地将RWA及数据资产进行数字化转型。
                 </p>
+            </div>
+
+            <div class="card mb-8">
                 <h3 class="text-xl font-semibold text-primary mb-4">我们的使命与核心竞争力</h3>
                 <p class="text-base text-gray-700 leading-relaxed mb-4">
                     元话RWA以赋能资产价值、连接数字未来为使命，凭借领先的技术平台（自主研发底座，多链部署，AI引擎“元启”与“元策”）、专业的金融结构设计（精准Tokenomics，跨境解决方案）和深度合规认知（“合规前置”，KYC/AML/KYB集成），为RWA及数据资产化提供全方位服务。
@@ -608,68 +568,118 @@
             </div>
         </section>
 
-        <section id="yuanhua-courses" class="mb-12">
-            <h2 class="section-title">“元话”付费课程：赋能Web3生态</h2>
-            <div class="card mb-8">
-                <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                    “元话”付费课程计划是达普韦伯公司的一项核心战略举措，旨在通过系统性的RWA及Web3知识普及，培养市场认知，建立品牌信任，并为METAKINA等核心业务输送高质量用户。该计划将利用创新的数字人IP和多渠道推广策略，打造行业领先的教育内容。
-                </p>
-                <div class="summary-box">
-                    <h4 class="font-semibold text-accent-teal mb-2">摘要：</h4>
-                    <p>
-                        “元话”付费课程是达普韦伯公司的战略性举措，旨在通过系统性的RWA及Web3知识普及，为METAKINA等核心业务培养用户。课程涵盖《盘活资产》和《RWA价值重构》两大体系，并有“元话RWA云系统平台”实操课。内容通过数字人IP“元小帅/元小妹”在多渠道推广，并构建私域社群进行精细化运营，以提升市场认知和用户转化。
-                    </p>
+        <section id="roadmap" class="mb-12">
+            <h2 class="section-title">整合行动路线图 (2025年5月 - 10月)</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-accent-orange">5月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-accent-orange mb-1">启动阶段</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 核心功能测试启动</li>
+                            <li><strong>DappWeb:</strong> 架构核心模块开发启动</li>
+                            <li><strong>METAKINA:</strong> 项目成立与初步市场调研</li>
+                            <li><strong>元话课程:</strong> RWA知识普及启动；《盘活资产》课程制作开始 (5/23)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-accent-pink">6月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-accent-pink mb-1">开发加速</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 核心功能开发完成</li>
+                            <li><strong>DappWeb:</strong> 核心模块开发完成</li>
+                            <li><strong>METAKINA:</strong> 架构设计与MVP开发启动</li>
+                            <li><strong>元话课程:</strong> 《盘活资产》制作完成；《RWA价值重构》制作开始</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-icon bg-accent-yellow">7月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-accent-yellow mb-1">测试与迭代</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 封闭测试启动</li>
+                            <li><strong>DappWeb:</strong> Alpha版本测试</li>
+                            <li><strong>METAKINA:</strong> MVP开发与协议最终确定</li>
+                            <li><strong>元话课程:</strong> 《RWA价值重构》持续制作</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-accent-teal">8月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-accent-teal mb-1">公测与优化</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 全面安全审计</li>
+                            <li><strong>DappWeb:</strong> 外部开发者测试</li>
+                            <li><strong>METAKINA:</strong> Beta公测版发布</li>
+                            <li><strong>元话课程:</strong> 《RWA价值重构》完成；“元话RWA云平台”实操课制作</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-primary text-white">9月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-primary mb-1">上线准备</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 移动端APP上线；投资大赛启动</li>
+                            <li><strong>DappWeb:</strong> 官网Beta版上线</li>
+                            <li><strong>METAKINA:</strong> 首单资产认购启动</li>
+                            <li><strong>元话课程:</strong> 付费课程正式发售</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-icon bg-green-500">10月</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold text-lg text-green-600 mb-1">全面启动</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong>KOLMarket:</strong> 平台正式上线</li>
+                            <li><strong>DappWeb:</strong> V1.0正式发布</li>
+                            <li><strong>METAKINA:</strong> 资产交割完成；Beta 2.0平台上线</li>
+                            <li><strong>元话课程:</strong> 持续用户运营与社群管理</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="card">
-                    <h3 class="text-xl font-semibold text-primary mb-3">目标受众构成（示意）</h3>
-                    <div class="chart-container h-72 md:h-80">
-                        <canvas id="yuanhuaAudienceChart"></canvas>
+        <section id="synergy" class="mb-12">
+            <h2 class="section-title">Web3生态协同效应</h2>
+            <div class="card">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6 text-center">
+                    达普韦伯公司的核心项目与元话课程计划并非孤立存在，而是相互赋能，共同构建一个强大的Web3生态系统。
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-around space-y-6 md:space-y-0 md:space-x-4">
+                    <div class="flowchart-node border-accent-orange text-accent-orange">
+                        <h4 class="font-semibold">元话课程</h4>
+                        <p class="text-xs">市场教育 & 用户引导</p>
                     </div>
-                    <p class="text-sm text-gray-600 mt-2 text-center">课程将覆盖个人学习者、企业客户及潜在合作伙伴。</p>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl font-semibold text-primary mb-3">核心课程体系</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="p-3 bg-orange-50 rounded-md shadow-sm">
-                            <strong class="text-accent-orange">《盘活资产，链接未来：销售读懂“实物资产上链”》</strong>
-                            <p class="text-xs">14章节/61小节，系统理论与案例分析，5分钟短视频形式。</p>
-                        </li>
-                        <li class="p-3 bg-pink-50 rounded-md shadow-sm">
-                            <strong class="text-accent-pink">《RWA价值重构：数字时代的资产配置与商业模式》</strong>
-                            <p class="text-xs">22章节/70小节，深度理论、商业模式与全球趋势解读。</p>
-                        </li>
-                        <li class="p-3 bg-teal-50 rounded-md shadow-sm">
-                            <strong class="text-accent-teal">“元话RWA云系统平台”实操赋能深度课程</strong>
-                            <p class="text-xs">杨仁鑫主导，聚焦平台操作与核心功能演示。</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card md:col-span-2">
-                    <h3 class="text-xl font-semibold text-primary mb-4">推广、运营与内容创新</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-1">数字人IP：元小妹 & 元小帅</h4>
-                            <p class="text-sm text-gray-600">结合公司同事形象与中华文化内涵，通过Heygen技术打造，分别以“RWA破壁者”（活泼亲和）和“RWA产业智脑”（专业权威）的形象进行知识传播。</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-1">多渠道推广与引流</h4>
-                            <p class="text-sm text-gray-600">前期通过公众号、视频号、小红书、B站、抖音、头条等平台每日更新科普内容，后期付费课程将结合真人专家与数字人进行品牌宣传。</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-1">私域流量运营</h4>
-                            <p class="text-sm text-gray-600">引导付费用户至企业微信群，提供精细化咨询、支持与社群互动，实现高价值用户沉淀。</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-1">内容制作团队与产出</h4>
-                            <p class="text-sm text-gray-600">核心团队3人（张明昊、张宇博、杨仁鑫），每人每日目标产出6条内容（3条引流视频+3个课程小节），确保内容快速迭代与规模化覆盖。</p>
-                        </div>
+                    <div class="flowchart-arrow text-gray-500">➔</div>
+                    <div class="flowchart-node border-accent-teal text-accent-teal">
+                        <h4 class="font-semibold">METAKINA (RWA)</h4>
+                        <p class="text-xs">资产数字化 & 机构信任</p>
                     </div>
                 </div>
+                <div class="flex justify-center my-4">
+                     <div class="flowchart-arrow text-gray-500 transform rotate-90 md:rotate-0">↓</div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-around space-y-6 md:space-y-0 md:space-x-4">
+                     <div class="flowchart-node border-accent-pink text-accent-pink">
+                        <h4 class="font-semibold">DappWeb 平台</h4>
+                        <p class="text-xs">核心技术支撑</p>
+                    </div>
+                     <div class="flowchart-arrow text-gray-500">➔</div>
+                     <div class="flowchart-node border-primary text-primary">
+                        <h4 class="font-semibold">KOLMarket</h4>
+                        <p class="text-xs">影响力经济 & 用户社群</p>
+                    </div>
+                </div>
+                 <p class="text-sm text-gray-600 mt-6 text-center">
+                    DappWeb平台为KOLMarket和METAKINA提供底层技术支持。元话课程通过RWA知识普及，直接为METAKINA培育潜在用户和资产方，同时也提升整个生态的Web3认知水平，间接惠及KOLMarket。各项目共同驱动用户增长和价值创造。
+                </p>
             </div>
         </section>
 
@@ -850,7 +860,7 @@
                     <div class="timeline-content">
                         <h4 class="font-semibold text-lg text-accent-orange mb-1">启动阶段</h4>
                         <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                            <li><strong>KOLMarket:</strong> 平台核心功能测试启动</li>
+                            <li><strong>KOLMarket:</strong> 核心功能测试启动</li>
                             <li><strong>DappWeb:</strong> 架构核心模块开发启动</li>
                             <li><strong>METAKINA:</strong> 项目成立与初步市场调研</li>
                             <li><strong>元话课程:</strong> RWA知识普及启动；《盘活资产》课程制作开始 (5/23)</li>
@@ -889,7 +899,7 @@
                             <li><strong>KOLMarket:</strong> 全面安全审计</li>
                             <li><strong>DappWeb:</strong> 外部开发者测试</li>
                             <li><strong>METAKINA:</strong> Beta公测版发布</li>
-                            <li><strong>元话课程:</strong> 《RWA价值重构》完成；“RWA云平台”实操课制作</li>
+                            <li><strong>元话课程:</strong> 《RWA价值重构》完成；“元话RWA云平台”实操课制作</li>
                         </ul>
                     </div>
                 </div>
@@ -1065,58 +1075,6 @@
         window.onload = function() {
             const yuanhuaAudienceCtx = document.getElementById('yuanhuaAudienceChart').getContext('2d');
             new Chart(yuanhuaAudienceCtx, yuanhuaAudienceConfig);
-
-            const summarizeDappWebBtn = document.getElementById('summarizeDappWebBtn');
-            const dappwebSummaryOutputDiv = document.getElementById('dappwebSummaryOutput');
-            const dappwebSummaryLoadingSpinner = document.getElementById('dappwebSummaryLoading');
-            const dappwebServicesIntro = document.getElementById('dappweb-services-intro').innerText;
-            const dappwebServiceItems = Array.from(document.querySelectorAll('#dappweb-services .service-item'))
-                                        .map(item => item.querySelector('.service-title').innerText + ": " + item.querySelector('.service-description').innerText)
-                                        .join('\n');
-
-            summarizeDappWebBtn.addEventListener('click', async () => {
-                dappwebSummaryOutputDiv.classList.add('hidden');
-                dappwebSummaryOutputDiv.innerText = '';
-                dappwebSummaryLoadingSpinner.classList.remove('hidden');
-                summarizeDappWebBtn.disabled = true;
-
-                const fullDappWebText = dappwebServicesIntro + "\n\n" + dappwebServiceItems;
-                const prompt = `请根据以下关于DappWeb服务外包业务的介绍，生成一个简洁的中文摘要，重点突出其服务范围和核心价值。请确保摘要在100字以内。\n\n${fullDappWebText}`;
-
-                let chatHistory = [];
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                const payload = { contents: chatHistory };
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        dappwebSummaryOutputDiv.innerText = text;
-                        dappwebSummaryOutputDiv.classList.remove('hidden');
-                    } else {
-                        dappwebSummaryOutputDiv.innerText = '未能生成摘要，请稍后再试。';
-                        dappwebSummaryOutputDiv.classList.remove('hidden');
-                        console.error('Gemini API response structure unexpected:', result);
-                    }
-                } catch (error) {
-                    dappwebSummaryOutputDiv.innerText = '生成摘要时发生错误，请检查网络连接或稍后再试。';
-                    dappwebSummaryOutputDiv.classList.remove('hidden');
-                    console.error('Error calling Gemini API:', error);
-                } finally {
-                    dappwebSummaryLoadingSpinner.classList.add('hidden');
-                    summarizeDappWebBtn.disabled = false;
-                }
-            });
         };
     </script>
 
