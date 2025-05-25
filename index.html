@@ -10,45 +10,32 @@
     <style>
         body {
             font-family: 'Noto Sans SC', 'Inter', sans-serif;
-            background-color: #F3F4F6; /* Light Gray Background */
+            background-color: #F3F4F6;
         }
-        /* Chosen Palette: Energetic & Playful (Adapted) */
-        /* Primary: Deep Blue: #1A237E */
-        /* Accent 1: Bright Orange: #FF7043 */
-        /* Accent 2: Vibrant Pink: #EC407A */
-        /* Accent 3: Sunny Yellow: #FFCA28 */
-        /* Supporting: Teal: #009688 */
-        /* Text: Dark Gray: #1F2937, Medium Gray: #4B5563 */
-
         .text-primary { color: #1A237E; }
         .bg-primary { background-color: #1A237E; }
         .border-primary { border-color: #1A237E; }
-
         .text-accent-orange { color: #FF7043; }
         .bg-accent-orange { background-color: #FF7043; }
-
         .text-accent-pink { color: #EC407A; }
         .bg-accent-pink { background-color: #EC407A; }
-        
         .text-accent-yellow { color: #FFCA28; }
         .bg-accent-yellow { background-color: #FFCA28; }
-
         .text-accent-teal { color: #009688; }
         .bg-accent-teal { background-color: #009688; }
-
         .section-title {
-            font-size: 2.25rem; /* 36px */
+            font-size: 2.25rem;
             font-weight: 700;
-            color: #1A237E; /* Deep Blue */
-            margin-bottom: 1.5rem; /* 24px */
+            color: #1A237E;
+            margin-bottom: 1.5rem;
             text-align: center;
         }
         .card {
             background-color: white;
-            border-radius: 0.75rem; /* 12px */
+            border-radius: 0.75rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            padding: 1.5rem; /* 24px */
-            margin-bottom: 1.5rem; /* 24px */
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
@@ -58,25 +45,25 @@
         .chart-container {
             position: relative;
             width: 100%;
-            max-width: 600px; /* Max width for readability */
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            height: 300px; /* Base height */
-            max-height: 400px; /* Max height */
+            height: 300px;
+            max-height: 400px;
         }
-        @media (min-width: 768px) { /* md breakpoint */
+        @media (min-width: 768px) {
             .chart-container {
                 height: 350px;
             }
         }
         .stat-number {
-            font-size: 2.5rem; /* 40px */
+            font-size: 2.5rem;
             font-weight: 700;
             line-height: 1.2;
         }
         .stat-label {
-            font-size: 0.875rem; /* 14px */
-            color: #4B5563; /* Medium Gray */
+            font-size: 0.875rem;
+            color: #4B5563;
             margin-top: 0.25rem;
         }
         .timeline {
@@ -91,7 +78,7 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background-color: #CBD5E1; /* Cool Gray 300 */
+            background-color: #CBD5E1;
             border-radius: 2px;
         }
         .timeline-item {
@@ -106,7 +93,7 @@
         }
         .timeline-content {
             position: relative;
-            width: calc(50% - 2rem); /* Adjust for spacing */
+            width: calc(50% - 2rem);
             padding: 1rem;
             background-color: white;
             border-radius: 0.5rem;
@@ -123,32 +110,32 @@
         .timeline-item:nth-child(odd) .timeline-content::before {
             content: '';
             position: absolute;
-            right: -0.5rem; /* Arrow position */
+            right: -0.5rem;
             top: 1rem;
             width: 0;
             height: 0;
             border-top: 0.5rem solid transparent;
             border-bottom: 0.5rem solid transparent;
-            border-left: 0.5rem solid white; /* Arrow color */
+            border-left: 0.5rem solid white;
         }
         .timeline-item:nth-child(even) .timeline-content::before {
             content: '';
             position: absolute;
-            left: -0.5rem; /* Arrow position */
+            left: -0.5rem;
             top: 1rem;
             width: 0;
             height: 0;
             border-top: 0.5rem solid transparent;
             border-bottom: 0.5rem solid transparent;
-            border-right: 0.5rem solid white; /* Arrow color */
+            border-right: 0.5rem solid white;
         }
         .timeline-icon {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            top: 0.75rem; /* Align with content top */
-            width: 2.5rem; /* 40px */
-            height: 2.5rem; /* 40px */
+            top: 0.75rem;
+            width: 2.5rem;
+            height: 2.5rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -166,7 +153,7 @@
             margin: 0.5rem;
         }
         .flowchart-arrow {
-            font-size: 1.5rem; /* 24px */
+            font-size: 1.5rem;
             margin: 0 0.5rem;
             display: flex;
             align-items: center;
@@ -186,53 +173,179 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .sixteen-stage-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        .flow-phase {
+            width: 100%;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .flow-phase-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            justify-items: center;
+        }
+        .flow-item {
+            background-color: white;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #E5E7EB;
+            font-size: 0.875rem;
+            line-height: 1.2;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .flow-item-number {
+            font-weight: bold;
+            color: #1A237E;
+            margin-bottom: 0.25rem;
+        }
+        .flow-arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 12px solid #CBD5E1;
+            margin: 0.5rem auto;
+        }
+        .flow-arrow-right {
+            width: 12px;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 12px solid #CBD5E1;
+            margin: auto 0.5rem;
+        }
+        @media (min-width: 768px) {
+            .flow-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .sixteen-stage-flow .flow-arrow-down {
+                margin: 1rem auto;
+            }
+        }
+        .flow-connector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+        .flow-connector.horizontal {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: auto;
+        }
+        .flow-connector.horizontal .flow-item {
+            flex-shrink: 0;
+        }
+        .flow-connector.horizontal .flow-arrow-right {
+            display: block;
+        }
+        .flow-connector.horizontal .flow-arrow-down {
+            display: none;
+        }
+        .flow-connector.vertical .flow-arrow-down {
+            display: block;
+        }
+        .flow-connector.vertical .flow-arrow-right {
+            display: none;
+        }
+        .service-item {
+            background-color: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+            transition: all 0.2s ease-in-out;
+        }
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        .service-title {
+            font-weight: 600;
+            color: #1A237E;
+            margin-bottom: 0.5rem;
+        }
+        .service-description {
+            font-size: 0.75rem;
+            color: #4B5563;
+        }
+        .summary-box {
+            background-color: #E0F2F7;
+            border: 1px solid #B2EBF2;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #006064;
+            line-height: 1.5;
+        }
+        .kolmarket-feature {
+            background-color: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+        }
+        .kolmarket-feature-title {
+            font-weight: 600;
+            color: #1A237E;
+            margin-bottom: 0.5rem;
+        }
+        .kolmarket-feature-description {
+            font-size: 0.875rem;
+            color: #4B5563;
+        }
+        .personnel-table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .personnel-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            min-width: 700px;
+        }
+        .personnel-table th, .personnel-table td {
+            padding: 0.75rem 1rem;
+            border: 1px solid #E2E8F0;
+            text-align: left;
+        }
+        .personnel-table th {
+            background-color: #F1F5F9;
+            font-weight: 600;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .personnel-table tr:nth-child(even) {
+            background-color: #F8FAFC;
+        }
     </style>
 </head>
 <body class="text-gray-800">
-
-    <!-- 
-        Narrative Plan:
-        1. Hero: Introduce DappWeb and its 6-month strategic vision, emphasizing Web3 ecosystem building.
-        2. Core Projects: Detail KOLMarket, DappWeb (platform), and METAKINA - their goals and key metrics for Oct 2025.
-        3. Yuanhua Courses: Deep dive into the "元话" paid course initiative, its objectives, target audience, course structure (free promo, paid courses, digital avatars), promotion, and team output. This is a strategic pillar for market education and METAKINA support.
-        4. Integrated Roadmap: Visualize the consolidated timeline of milestones for all three projects and the Yuanhua courses from May to October 2025.
-        5. Ecosystem Synergy: Illustrate how the projects (especially Yuanhua and METAKINA) and DappWeb (as tech backbone) support each other to create a cohesive ecosystem.
-        6. Concluding Note: Briefly reiterate the company's commitment to Web3 innovation.
-
-        Visualization Choices:
-        - Core Project Metrics (Oct 2025 Targets):
-            - Data: KOLMarket (20-30 KOLs, 5k+ users, 1M USDT volume), DappWeb (V1.0, 2 internal support, 1-2 external clients), METAKINA (Beta, >=1 asset, 10M RMB scale).
-            - Goal: Inform.
-            - Chosen Visualization: "Single Big Number" style text callouts within styled cards.
-            - Justification: Direct and impactful for showcasing key targets.
-            - Library/Method: HTML/Tailwind CSS. NO SVG.
-        - Yuanhua Target Audience:
-            - Data: Individual Learners, Enterprise Clients, Potential Partners (Conceptual proportions for visualization: e.g., 60%, 25%, 15%).
-            - Goal: Compare (composition).
-            - Chosen Visualization: Donut Chart.
-            - Justification: Good for showing parts of a whole.
-            - Library/Method: Chart.js (Canvas). NO SVG.
-        - Yuanhua Course Production Output (Team):
-            - Data: 3 core members, each 6 pieces/day (3 promo, 3 lessons).
-            - Goal: Inform.
-            - Chosen Visualization: Styled list or small cards.
-            - Justification: Clear presentation of output metrics.
-            - Library/Method: HTML/Tailwind CSS. NO SVG.
-        - Integrated Timeline (May-Oct 2025):
-            - Data: Milestones for KOLMarket, DappWeb, METAKINA, Yuanhua from PDFs.
-            - Goal: Change (over time), Organize (events).
-            - Chosen Visualization: HTML/CSS vertical timeline.
-            - Justification: Visually represents progression and key events chronologically.
-            - Library/Method: HTML/Tailwind CSS. NO SVG, NO MERMAID JS.
-        - Ecosystem Synergy:
-            - Data: Relationships - Yuanhua educates for METAKINA, DappWeb provides tech for KOLMarket & METAKINA.
-            - Goal: Organize (relationships).
-            - Chosen Visualization: HTML/CSS based flowchart (nodes and text/Unicode arrows).
-            - Justification: Shows connections and dependencies.
-            - Library/Method: HTML/Tailwind CSS. NO SVG, NO MERMAID JS.
-        - Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. All visuals are Chart.js (Canvas) or HTML/Tailwind CSS.
-        - Color Palette Name: Energetic & Playful (Adapted)
-    -->
 
     <header class="bg-primary text-white py-8 shadow-lg">
         <div class="container mx-auto px-6 text-center">
@@ -318,20 +431,195 @@
             </div>
         </section>
 
+        <section id="dappweb-services" class="mb-12">
+            <h2 class="section-title">DappWeb 服务外包业务</h2>
+            <div class="card mb-8">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4" id="dappweb-services-intro">
+                    DappWeb平台不仅为内部项目提供技术支撑，更面向外部客户提供全面的Web3技术解决方案与定制开发服务。以下是我们提供的12项核心服务外包业务，旨在帮助各类企业和机构无缝进入去中心化数字经济。
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-4">
+                    <button id="summarizeDappWebBtn" class="bg-accent-pink text-white px-6 py-3 rounded-lg shadow-md hover:bg-pink-700 transition duration-300 flex items-center justify-center">
+                        ✨ 获取DappWeb服务摘要
+                        <span id="dappwebSummaryLoading" class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+                <div id="dappwebSummaryOutput" class="mt-4 p-4 bg-pink-50 border border-pink-200 rounded-md text-pink-800 hidden">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="service-item">
+                    <h4 class="service-title">交易所软件开发</h4>
+                    <p class="service-description">安全、高效、可扩展的中心化及去中心化（DEX）交易所系统定制。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">DApp 开发</h4>
+                    <p class="service-description">基于主流公链（ETH, BSC, Solana, Kinachain等）的去中心化应用开发。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">DeFi 解决方案</h4>
+                    <p class="service-description">构建去中心化金融协议，如借贷、DEX、流动性挖矿、RWA等。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">可信数据空间</h4>
+                    <p class="service-description">构建基于隐私计算和区块链技术的数据安全共享与协作环境。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">量化交易系统</h4>
+                    <p class="service-description">开发定制化的数字资产量化交易策略、机器人跟单系统。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">GameFi 开发</h4>
+                    <p class="service-description">配合游戏与金融，打造引人入胜的Play to Earn各类链游。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">NFT 市场开发</h4>
+                    <p class="service-description">开发功能丰富的NFT发行、交易、拍卖、展示平台（基于ERC721/1155）。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">数字钱包开发</h4>
+                    <p class="service-description">开发安全易用的Web3钱包（浏览器插件、移动App），支持多链。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">公链与联盟链</h4>
+                    <p class="service-description">提供公链节点部署、联盟链（如自研Kinachain）搭建与运维服务。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">Layer 2 解决方案</h4>
+                    <p class="service-description">基于Rollups（Optimistic, ZK）等技术提供扩容方案设计与开发。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">人工智能服务</h4>
+                    <p class="service-description">提供基于可信数据和Web3架构的模型训练、部署与应用服务，专注个性化、强隐私（如独立记忆体）和可解释的智能解决方案。</p>
+                </div>
+                <div class="service-item">
+                    <h4 class="service-title">数据交易系统</h4>
+                    <p class="service-description">开发安全合规的数据要素流通平台（如“数易通”），集成AI智能匹配与评估。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="kolmarket-status" class="mb-12">
+            <h2 class="section-title">KOLMarket 平台现状与核心功能</h2>
+            <div class="card mb-8">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    KOLMarket 平台致力于构建一个基于区块链的 KOL 影响力资产化与交易社区。通过创新的 AVM 精准估值系统，平台能够实时追踪 KOL 的影响力价值，并将其转化为可交易的数字资产，实现粉丝投资与 KOL 的共赢。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-3">核心功能与交易市场</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="kolmarket-feature">
+                            <h4 class="kolmarket-feature-title">交易 KOL 代币与 NFT</h4>
+                            <p class="kolmarket-feature-description">允许用户交易与 KOL 影响力相关的数字资产。</p>
+                        </div>
+                        <div class="kolmarket-feature">
+                            <h4 class="kolmarket-feature-title">NFT VIP Pass</h4>
+                            <p class="kolmarket-feature-description">提供专属的 NFT VIP 通行证。</p>
+                        </div>
+                        <div class="kolmarket-feature">
+                            <h4 class="kolmarket-feature-title">NFT Vote</h4>
+                            <p class="kolmarket-feature-description">支持通过 NFT 进行投票，参与 KOL 决策。</p>
+                        </div>
+                        <div class="kolmarket-feature">
+                            <h4 class="kolmarket-feature-title">NFT Merch</h4>
+                            <p class="kolmarket-feature-description">提供 KOL 周边商品的 NFT 形式。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-3">AVM 影响力估值系统</h3>
+                    <div class="flex flex-col items-center justify-center space-y-4">
+                        <div class="kolmarket-feature w-full">
+                            <h4 class="kolmarket-feature-title">核心技术：AVM 影响力估值系统</h4>
+                            <p class="kolmarket-feature-description">实时影响力价值追踪，为 KOL 代币与 NFT 提供精准估值。</p>
+                        </div>
+                        <div class="kolmarket-feature w-full">
+                            <p class="stat-number text-accent-orange">720</p>
+                            <p class="stat-label">明星 KOL 已入驻</p>
+                        </div>
+                        <div class="kolmarket-feature w-full">
+                            <p class="stat-number text-accent-teal">650</p>
+                            <p class="stat-label">潜力 KOL 等待发现</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-6">
+                <h3 class="text-xl font-semibold text-primary mb-3 text-center">发现潜力 KOL</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="kolmarket-feature">KOL A Banner</div>
+                    <div class="kolmarket-feature">KOL B Banner</div>
+                    <div class="kolmarket-feature">KOL C Banner</div>
+                    <div class="kolmarket-feature">KOL D Banner</div>
+                </div>
+                <p class="text-sm text-gray-600 mt-4 text-center">平台展示了多位已入驻的明星 KOL，并提供了发现更多潜力 KOL 的功能。</p>
+            </div>
+        </section>
+
+        <section id="yuanhua-rwa-services" class="mb-12">
+            <h2 class="section-title">元话RWA与数据资产化服务：核心业务</h2>
+            <div class="card mb-8">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    元话RWA服务致力于构建连接现实资产世界与数字金融未来的桥梁，帮助企业和机构安全、合规地将RWA及数据资产进行数字化转型。
+                </p>
+                <h3 class="text-xl font-semibold text-primary mb-4">我们的使命与核心竞争力</h3>
+                <p class="text-base text-gray-700 leading-relaxed mb-4">
+                    元话RWA以赋能资产价值、连接数字未来为使命，凭借领先的技术平台（自主研发底座，多链部署，AI引擎“元启”与“元策”）、专业的金融结构设计（精准Tokenomics，跨境解决方案）和深度合规认知（“合规前置”，KYC/AML/KYB集成），为RWA及数据资产化提供全方位服务。
+                </p>
+            </div>
+
+            <div class="card mb-8">
+                <h3 class="text-xl font-semibold text-primary mb-4 text-center">元话服务全景概览</h3>
+                <p class="text-base text-gray-700 leading-relaxed mb-4">
+                    元话提供从数据/资产到价值实现的完整服务流程，涵盖数据产品形成、数据产品合规销售与数据产品证券金融化等三大核心阶段。
+                </p>
+            </div>
+
+            <div class="card mb-8">
+                <h3 class="text-xl font-semibold text-primary mb-4">四大核心服务模块</h3>
+                <p class="text-base text-gray-700 leading-relaxed mb-4">
+                    元话RWA提供资产数字化与价值洞察、价值实现与融资促进、合规保障（全流程风险护航）以及生态与利益相关者管理四大模块化服务，确保客户资产安全、高效地完成数字化转型与价值实现。
+                </p>
+            </div>
+
+            <div class="card mb-8">
+                <h3 class="text-xl font-semibold text-primary mb-4">技术平台与安全体系</h3>
+                <p class="text-base text-gray-700 leading-relaxed mb-4">
+                    元话RWA平台采用云原生微服务架构，具备自主知识产权技术底座和AI引擎，通过多层次防御策略（基础设施、应用、数据、智能合约安全）和合规技术特性（RegTech集成、可配置规则引擎、不可篡改审计日志），提供安全可靠的RWA解决方案。
+                </p>
+            </div>
+
+            <div class="card mb-8">
+                <h3 class="text-xl font-semibold text-primary mb-4">费用结构与合作模式</h3>
+                <p class="text-base text-gray-700 leading-relaxed mb-4">
+                    元话RWA秉持透明公开、灵活定制、价值导向和风险共担的定价原则，提供基础、专业及企业定制套餐，费用构成包括咨询、平台使用、项目管理等，支持多种支付方式。
+                </p>
+            </div>
+
+            <div class="card">
+                <h3 class="text-xl font-semibold text-primary mb-4">风险管理与客户权益</h3>
+                <p class="text-base text-gray-700 leading-relaxed mb-4">
+                    元话RWA全面识别监管、运营、技术、底层资产、市场及对手方风险，通过“合规前置”的全流程风险管控和应急预案，保障客户的知情权、资金安全、数据隐私、决策权及服务水平承诺。
+                </p>
+            </div>
+        </section>
+
         <section id="yuanhua-courses" class="mb-12">
             <h2 class="section-title">“元话”付费课程：赋能Web3生态</h2>
             <div class="card mb-8">
-                <p class="text-lg text-gray-700 leading-relaxed mb-4" id="yuanhua-course-intro">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
                     “元话”付费课程计划是达普韦伯公司的一项核心战略举措，旨在通过系统性的RWA及Web3知识普及，培养市场认知，建立品牌信任，并为METAKINA等核心业务输送高质量用户。该计划将利用创新的数字人IP和多渠道推广策略，打造行业领先的教育内容。
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-4">
-                    <button id="summarizeYuanhuaBtn" class="bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 flex items-center justify-center">
-                        ✨ 获取智能摘要
-                        <span id="summaryLoading" class="loading-spinner hidden"></span>
-                    </button>
+                <div class="summary-box">
+                    <h4 class="font-semibold text-accent-teal mb-2">摘要：</h4>
+                    <p>
+                        “元话”付费课程是达普韦伯公司的战略性举措，旨在通过系统性的RWA及Web3知识普及，为METAKINA等核心业务培养用户。课程涵盖《盘活资产》和《RWA价值重构》两大体系，并有“元话RWA云系统平台”实操课。内容通过数字人IP“元小帅/元小妹”在多渠道推广，并构建私域社群进行精细化运营，以提升市场认知和用户转化。
+                    </p>
                 </div>
-                <div id="yuanhuaSummaryOutput" class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-md text-blue-800 hidden">
-                    </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -385,6 +673,175 @@
             </div>
         </section>
 
+        <section id="team-allocation" class="mb-12">
+            <h2 class="section-title">团队成员与职责分配</h2>
+            <div class="card">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    公司拥有专业的团队，成员各司其职，共同推动Web3生态项目的进展。以下是主要在职人员及其在当前项目中的职责分配。
+                </p>
+                <div class="personnel-table-container">
+                    <table class="personnel-table">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>姓名</th>
+                                <th>部门</th>
+                                <th>职位</th>
+                                <th>所在项目/工作内容</th>
+                                <th>学历</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>张强伟</td>
+                                <td>总经办</td>
+                                <td>总经理</td>
+                                <td>HK 业务</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>孙伟涛</td>
+                                <td>新媒体</td>
+                                <td>运营</td>
+                                <td>HK 业务 (广告引流)</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>杨佳</td>
+                                <td>技术部</td>
+                                <td>后端</td>
+                                <td>元话SaaS</td>
+                                <td>大专</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>朱银军</td>
+                                <td>技术部</td>
+                                <td>技术总监</td>
+                                <td>CTO</td>
+                                <td>硕士</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>卫志雄</td>
+                                <td>技术部</td>
+                                <td>后端</td>
+                                <td>KOL</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>李彬</td>
+                                <td>技术部</td>
+                                <td>UI</td>
+                                <td>UI设计</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>裴佳奇</td>
+                                <td>技术部</td>
+                                <td>后端</td>
+                                <td>网页制作 (KOL)</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>白云辉</td>
+                                <td>技术部</td>
+                                <td>UI</td>
+                                <td>UI设计</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>张明昊</td>
+                                <td>新媒体</td>
+                                <td>运营</td>
+                                <td>视频制作</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>张宇博</td>
+                                <td>新媒体</td>
+                                <td>运营</td>
+                                <td>视频制作</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>杨絮絮</td>
+                                <td>行政</td>
+                                <td>人事</td>
+                                <td>行政</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>杨仁鑫</td>
+                                <td>新媒体</td>
+                                <td>运营</td>
+                                <td>视频制作</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>李旭阳</td>
+                                <td>技术部</td>
+                                <td>前端</td>
+                                <td>网页制作 (KOL)</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>李倩</td>
+                                <td>技术部</td>
+                                <td>前端</td>
+                                <td>网页制作 (元话SaaS)</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>丁艺伟</td>
+                                <td>技术部</td>
+                                <td>前端</td>
+                                <td>网页制作 (KOL)</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>唐彤彤</td>
+                                <td>新媒体</td>
+                                <td>运营</td>
+                                <td>广告引流</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>王涛</td>
+                                <td>技术部</td>
+                                <td>后端</td>
+                                <td>KOL + 元话SaaS + 量化</td>
+                                <td>硕士</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>任怡宁</td>
+                                <td>新媒体</td>
+                                <td>运营</td>
+                                <td>广告引流</td>
+                                <td>硕士</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
         <section id="roadmap" class="mb-12">
             <h2 class="section-title">整合行动路线图 (2025年5月 - 10月)</h2>
             <div class="timeline">
@@ -393,7 +850,7 @@
                     <div class="timeline-content">
                         <h4 class="font-semibold text-lg text-accent-orange mb-1">启动阶段</h4>
                         <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                            <li><strong>KOLMarket:</strong> 核心功能测试启动</li>
+                            <li><strong>KOLMarket:</strong> 平台核心功能测试启动</li>
                             <li><strong>DappWeb:</strong> 架构核心模块开发启动</li>
                             <li><strong>METAKINA:</strong> 项目成立与初步市场调研</li>
                             <li><strong>元话课程:</strong> RWA知识普及启动；《盘活资产》课程制作开始 (5/23)</li>
@@ -509,7 +966,7 @@
 
     <script>
         function wrapText(text, maxWidth) {
-            if (typeof text !== 'string') return text; // Return as is if not a string (e.g., already an array)
+            if (typeof text !== 'string') return text;
             if (text.length <= maxWidth) return text;
 
             const words = text.split(' ');
@@ -532,11 +989,11 @@
             labels: ['个人学习者', '企业客户', '潜在合作伙伴'].map(label => wrapText(label, 16)),
             datasets: [{
                 label: '目标受众构成',
-                data: [60, 25, 15], // Example percentages
+                data: [60, 25, 15],
                 backgroundColor: [
-                    '#FF7043', // Bright Orange
-                    '#EC407A', // Vibrant Pink
-                    '#009688'  // Teal
+                    '#FF7043',
+                    '#EC407A',
+                    '#009688'
                 ],
                 borderColor: [
                     '#FFFFFF',
@@ -560,7 +1017,6 @@
                             font: {
                                 family: "'Noto Sans SC', 'Inter', sans-serif"
                             },
-                            // Custom label formatter if needed for wrapped text
                             generateLabels: function(chart) {
                                 const data = chart.data;
                                 if (data.labels.length && data.datasets.length) {
@@ -568,7 +1024,7 @@
                                         const meta = chart.getDatasetMeta(0);
                                         const style = meta.controller.getStyle(i);
                                         return {
-                                            text: Array.isArray(label) ? label.join(' ') : label, // Join wrapped label back for legend
+                                            text: Array.isArray(label) ? label.join(' ') : label,
                                             fillStyle: style.backgroundColor,
                                             strokeStyle: style.borderColor,
                                             lineWidth: style.borderWidth,
@@ -610,25 +1066,27 @@
             const yuanhuaAudienceCtx = document.getElementById('yuanhuaAudienceChart').getContext('2d');
             new Chart(yuanhuaAudienceCtx, yuanhuaAudienceConfig);
 
-            const summarizeBtn = document.getElementById('summarizeYuanhuaBtn');
-            const summaryOutputDiv = document.getElementById('yuanhuaSummaryOutput');
-            const summaryLoadingSpinner = document.getElementById('summaryLoading');
-            const yuanhuaCourseIntro = document.getElementById('yuanhua-course-intro').innerText;
-            const yuanhuaCourseDetails = document.querySelector('#yuanhua-courses .card:nth-of-type(2)').innerText + "\n" + document.querySelector('#yuanhua-courses .card:nth-of-type(3)').innerText;
+            const summarizeDappWebBtn = document.getElementById('summarizeDappWebBtn');
+            const dappwebSummaryOutputDiv = document.getElementById('dappwebSummaryOutput');
+            const dappwebSummaryLoadingSpinner = document.getElementById('dappwebSummaryLoading');
+            const dappwebServicesIntro = document.getElementById('dappweb-services-intro').innerText;
+            const dappwebServiceItems = Array.from(document.querySelectorAll('#dappweb-services .service-item'))
+                                        .map(item => item.querySelector('.service-title').innerText + ": " + item.querySelector('.service-description').innerText)
+                                        .join('\n');
 
-            summarizeBtn.addEventListener('click', async () => {
-                summaryOutputDiv.classList.add('hidden'); // Hide previous summary
-                summaryOutputDiv.innerText = ''; // Clear previous summary
-                summaryLoadingSpinner.classList.remove('hidden'); // Show loading spinner
-                summarizeBtn.disabled = true; // Disable button during loading
+            summarizeDappWebBtn.addEventListener('click', async () => {
+                dappwebSummaryOutputDiv.classList.add('hidden');
+                dappwebSummaryOutputDiv.innerText = '';
+                dappwebSummaryLoadingSpinner.classList.remove('hidden');
+                summarizeDappWebBtn.disabled = true;
 
-                const fullCourseText = yuanhuaCourseIntro + "\n\n" + yuanhuaCourseDetails;
-                const prompt = `请根据以下关于'元话'付费课程的介绍，生成一个简洁的中文摘要，重点突出课程目标、内容和推广策略。请确保摘要在100字以内。\n\n${fullCourseText}`;
+                const fullDappWebText = dappwebServicesIntro + "\n\n" + dappwebServiceItems;
+                const prompt = `请根据以下关于DappWeb服务外包业务的介绍，生成一个简洁的中文摘要，重点突出其服务范围和核心价值。请确保摘要在100字以内。\n\n${fullDappWebText}`;
 
                 let chatHistory = [];
                 chatHistory.push({ role: "user", parts: [{ text: prompt }] });
                 const payload = { contents: chatHistory };
-                const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                const apiKey = "";
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 try {
@@ -643,20 +1101,20 @@
                         result.candidates[0].content && result.candidates[0].content.parts &&
                         result.candidates[0].content.parts.length > 0) {
                         const text = result.candidates[0].content.parts[0].text;
-                        summaryOutputDiv.innerText = text;
-                        summaryOutputDiv.classList.remove('hidden');
+                        dappwebSummaryOutputDiv.innerText = text;
+                        dappwebSummaryOutputDiv.classList.remove('hidden');
                     } else {
-                        summaryOutputDiv.innerText = '未能生成摘要，请稍后再试。';
-                        summaryOutputDiv.classList.remove('hidden');
+                        dappwebSummaryOutputDiv.innerText = '未能生成摘要，请稍后再试。';
+                        dappwebSummaryOutputDiv.classList.remove('hidden');
                         console.error('Gemini API response structure unexpected:', result);
                     }
                 } catch (error) {
-                    summaryOutputDiv.innerText = '生成摘要时发生错误，请检查网络连接或稍后再试。';
-                    summaryOutputDiv.classList.remove('hidden');
+                    dappwebSummaryOutputDiv.innerText = '生成摘要时发生错误，请检查网络连接或稍后再试。';
+                    dappwebSummaryOutputDiv.classList.remove('hidden');
                     console.error('Error calling Gemini API:', error);
                 } finally {
-                    summaryLoadingSpinner.classList.add('hidden'); // Hide loading spinner
-                    summarizeBtn.disabled = false; // Re-enable button
+                    dappwebSummaryLoadingSpinner.classList.add('hidden');
+                    summarizeDappWebBtn.disabled = false;
                 }
             });
         };
