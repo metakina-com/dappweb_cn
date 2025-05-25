@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWA实体商业创新融资 信息图</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #F7FAFC; /* Light Gray */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-title {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* bold */
+            margin-bottom: 1.5rem; /* mb-6 */
+            color: #073B4C; /* Midnight Green */
+            text-align: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            padding: 1.5rem; /* p-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        .stat-big {
+            font-size: 3rem; /* text-5xl */
+            font-weight: 700; /* bold */
+            color: #118AB2; /* Blue NCS */
+        }
+        .stat-label {
+            font-size: 1rem; /* text-base */
+            color: #073B4C; /* Midnight Green */
+        }
+        .flowchart-step {
+            border: 2px solid #118AB2; /* Blue NCS */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            background-color: #E0F7FA; /* Light cyan for steps */
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .flowchart-arrow {
+            font-size: 2rem;
+            color: #118AB2; /* Blue NCS */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0.5rem 0;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+            padding-left: 2.5rem; 
+            border-left: 3px solid #06D6A0; /* Caribbean Green */
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.6rem; 
+            top: 0.25rem;
+            height: 1rem;
+            width: 1rem;
+            background-color: #FF6B6B; /* Coral Pink */
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .tab-button {
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .tab-button.active {
+            background-color: #118AB2; /* Blue NCS */
+            color: white;
+        }
+        .tab-button:not(.active) {
+            background-color: #E0E0E0; /* Gray */
+            color: #073B4C; /* Midnight Green */
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Palette: Energetic & Playful - Custom Adaptation */
+        /* Primary: #FF6B6B (Coral Pink) */
+        /* Secondary: #FFD166 (Sunglow Yellow) */
+        /* Tertiary: #06D6A0 (Caribbean Green) */
+        /* Quaternary: #118AB2 (Blue NCS) */
+        /* Text/Dark: #073B4C (Midnight Green) */
+        /* Background: #F7FAFC (Light Gray) or #FFFFFF (White) */
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 
+        Infographic Narrative Plan Summary:
+        1. Intro: RWA Revolution & Vision (Market Size, Challenges, Solution).
+        2. Innovators: Metakina & Chang'an Trust (Capabilities, Roles).
+        3. Domestic Blueprint: Compliant Innovation in China (Private Placement Trust Tokenization Model, Process Flow, Benefits).
+        4. Going Global: Replicating Success (STO/Tokenized Funds, Cross-border Enablers).
+        5. Navigating the Future: Risks & Roadmap.
+        6. Conclusion & Call to Action.
+
+        Visualization Choices Summary:
+        - RWA Market Growth: Line Chart (Chart.js). Goal: Change. Justification: Show trend over time. Method: Canvas.
+        - Chang'an Trust Financials: Bar Chart (Chart.js). Goal: Compare. Justification: Compare financial figures. Method: Canvas.
+        - Metakina Core Competencies: Donut Chart (Chart.js). Goal: Compare/Inform. Justification: Show composition of expertise. Method: Canvas.
+        - Domestic Model Process Flow: HTML/CSS Flow Chart. Goal: Organize. Justification: Illustrate multi-step process. Method: Styled HTML divs.
+        - Domestic vs. International Comparison: HTML Table. Goal: Compare. Justification: Structured comparison of features. Method: Styled HTML table.
+        - Roadmap: HTML/CSS Timeline. Goal: Organize/Change. Justification: Show phased implementation over time. Method: Styled HTML divs.
+        - Other stats: Single Big Numbers (Styled HTML). Goal: Inform. Justification: Highlight key figures. Method: Styled HTML text.
+        - NO SVG graphics used. NO Mermaid JS used.
+
+        Chosen Color Palette Name: Energetic & Playful - Custom Adaptation
+    -->
+
+    <header class="bg-gradient-to-r from-[#118AB2] to-[#06D6A0] text-white py-12 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">实体商业RWA创新融资</h1>
+        <p class="text-xl md:text-2xl">连接传统资产与数字未来：元话RWA与长安信托的合作展望</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <section id="vision" class="py-8">
+            <h2 class="section-title">RWA革命与我们的愿景</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                <div class="md:col-span-1 card text-center">
+                    <div class="stat-big">$16万亿</div>
+                    <div class="stat-label">BCG预测：2030年非流动资产通证化市场规模</div>
+                    <p class="mt-2 text-sm text-gray-600">RWA通证化为传统资产带来前所未有的流动性与机遇。</p>
+                </div>
+                <div class="md:col-span-2 card">
+                    <h3 class="text-2xl font-semibold mb-3 text-[#073B4C]">传统资产的挑战与RWA的解决方案</h3>
+                    <p class="mb-2">传统实体资产面临流动性不足、交易效率低下、投资门槛高等挑战。RWA（现实世界资产）通证化通过区块链技术，将这些资产的权益映射到数字世界，旨在：</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li><span class="font-semibold text-[#FF6B6B]">提升资产流动性：</span>实现资产的细分化和更广泛的交易。</li>
+                        <li><span class="font-semibold text-[#FFD166]">降低投资门槛：</span>让更多合格投资者参与高价值资产。</li>
+                        <li><span class="font-semibold text-[#06D6A0]">提高交易效率：</span>简化流程，减少中介成本。</li>
+                        <li><span class="font-semibold text-[#118AB2]">增强透明度：</span>交易记录上链，公开可追溯。</li>
+                    </ul>
+                    <p class="mt-3 font-medium text-[#073B4C]">我们的使命：元话RWA与长安信托携手，通过合规创新，为实体商业赋能，连接传统金融与数字资产的未来。</p>
+                </div>
+            </div>
+            <div class="card mt-6">
+                <h3 class="text-xl font-semibold mb-3 text-center text-[#073B4C]">RWA市场增长潜力</h3>
+                <div class="chart-container h-64 md:h-80 max-h-[400px]">
+                    <canvas id="rwaMarketGrowthChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-600 mt-2">数据来源：波士顿咨询集团（BCG）等行业研究。图表数据为示意性增长趋势。</p>
+            </div>
+        </section>
+
+        <section id="innovators" class="py-8 bg-slate-50 rounded-lg">
+            <h2 class="section-title">创新双引擎：元话RWA与长安信托</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-4 text-[#073B4C]">元话RWA (METAKINA)</h3>
+                    <p class="mb-3">一家专注于RWA和数据资产化服务的科技公司，核心竞争力在于“金融 x 科技 x 合规”的深度融合。</p>
+                    <div class="chart-container h-56 max-h-[300px] mb-4">
+                        <canvas id="metakinaCompetenciesChart"></canvas>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li><strong class="text-[#FF6B6B]">🚀 全生命周期服务:</strong> 从资产梳理、合规设计、技术实现到市场对接、投后管理。</li>
+                        <li><strong class="text-[#FFD166]">💡 AI驱动技术:</strong> “元启”AI估值引擎与“元策”AI市场预测模型，ERC-3643标准智能合约。</li>
+                        <li><strong class="text-[#06D6A0]">🌏 跨境解决方案:</strong> “香港+西安”双引擎，熟悉LPF+QFLP等跨境结构。</li>
+                        <li><strong class="text-[#118AB2]">🛡️ 合规前置:</strong> 深度理解并嵌入中国及国际数据与金融法规。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-4 text-[#073B4C]">长安信托</h3>
+                    <p class="mb-3">受国家金融监督管理总局监管的持牌信托公司，致力于回归信托本源。</p>
+                    <div class="bg-[#E0F7FA] p-4 rounded-lg mb-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#118AB2]">21.69 万亿人民币</div>
+                            <div class="text-sm text-[#073B4C]">中国信托行业资产规模 (2023年Q2)</div>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li><strong class="text-[#FF6B6B]">🎯 业务核心:</strong> 资产服务信托、资产管理信托、公益慈善信托。</li>
+                        <li><strong class="text-[#FFD166]">👥 私域网络:</strong> 拥有广泛的合格投资者客户群体，为私募发行提供基础。</li>
+                        <li><strong class="text-[#06D6A0]">⚖️ 合规运营:</strong> 严格遵守中国金融监管规定，确保业务合规开展。</li>
+                        <li><strong class="text-[#118AB2]">📊 近年财务表现 (亿元):</strong>
+                            <div class="chart-container h-56 max-h-[300px] mt-2">
+                                <canvas id="changanTrustFinancialsChart"></canvas>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="domestic-model" class="py-8">
+            <h2 class="section-title">境内蓝图：合格投资者私募信托通证化</h2>
+            <p class="text-center mb-6 max-w-3xl mx-auto text-gray-700">在中国严格的金融监管环境下，我们将“众筹”概念创新性地转化为面向合格投资者的“私募信托受益权通证化”模式。此模式利用信托的法律框架实现资产隔离与合规管理，并通过元话RWA的技术提升效率与透明度。</p>
+            
+            <div class="card md:col-span-2">
+                <h3 class="text-xl font-semibold mb-4 text-center text-[#073B4C]">交易结构流程</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
+                    <div class="flowchart-step"><span>1. 资产识别与准备</span><small>(实体商业 + 元话AI)</small></div>
+                    <div class="flowchart-arrow hidden lg:flex">➔</div>
+                    <div class="flowchart-step"><span>2. 信托设立与资产注入</span><small>(实体商业 + 长安信托)</small></div>
+                    <div class="flowchart-arrow hidden lg:flex">➔</div>
+                    <div class="flowchart-step"><span>3. 信托受益权通证化</span><small>(元话RWA - ERC-3643)</small></div>
+                </div>
+                <div class="lg:hidden flex justify-center my-2"><div class="flowchart-arrow">⬇</div></div>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch mt-0 lg:mt-4">
+                    <div class="lg:col-start-2 flowchart-step"><span>4. 私募发行与分发</span><small>(长安信托私域合格投资者 - 人数≤200)</small></div>
+                     <div class="flowchart-arrow hidden lg:flex">➔</div>
+                    <div class="lg:col-start-4 flowchart-step"><span>5. 资金运用与管理</span><small>(长安信托, 实体商业, 元话平台)</small></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="card">
+                    <h4 class="text-lg font-semibold mb-2 text-[#073B4C]">对实体商业的价值</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>合规获取资本，拓宽融资渠道。</li>
+                        <li>盘活非流动资产，实现价值份额化。</li>
+                        <li>提升融资透明度与投资者信心。</li>
+                        <li>智能合约赋能，潜在效率提升。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4 class="text-lg font-semibold mb-2 text-[#073B4C]">对合格投资者的价值</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>投资机会多元化，进入高门槛实体资产。</li>
+                        <li>份额化投资，降低参与门槛。</li>
+                        <li>收益分配自动化、透明化。</li>
+                        <li>资产运营信息可追溯。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-6">
+                <h3 class="text-xl font-semibold mb-4 text-center text-[#073B4C]">境内“股权类”与“消费类”RWA融资模式比较</h3>
+                 <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 text-sm">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-3 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">特征</th>
+                                <th class="px-3 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">股权类信托受益权通证化</th>
+                                <th class="px-3 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">消费类信托受益权通证化</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-3 py-2 whitespace-nowrap font-medium text-[#073B4C]">底层资产</td>
+                                <td class="px-3 py-2">公司股权、项目股权</td>
+                                <td class="px-3 py-2">未来收益权（租金、服务费）、消费权益（折扣权）</td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-2 whitespace-nowrap font-medium text-[#073B4C]">投资者回报</td>
+                                <td class="px-3 py-2">股息分红、股权增值</td>
+                                <td class="px-3 py-2">收益分成、消费权益兑现</td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-2 whitespace-nowrap font-medium text-[#073B4C]">核心监管挑战</td>
+                                <td class="px-3 py-2">私募人数限制(≤200人)、合格投资者</td>
+                                <td class="px-3 py-2">防范非法集资、合格投资者、避免“预付卡”性质</td>
+                            </tr>
+                             <tr>
+                                <td class="px-3 py-2 whitespace-nowrap font-medium text-[#073B4C]">合规风险</td>
+                                <td class="px-3 py-2 text-green-600">相对清晰，严守私募规则</td>
+                                <td class="px-3 py-2 text-orange-600">较高，需审慎设计，侧重“权益分配”</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-gray-500 mt-2 text-center">详细信息请参考完整报告中表2。</p>
+            </div>
+        </section>
+
+        <section id="global-model" class="py-8 bg-slate-50 rounded-lg">
+            <h2 class="section-title">迈向全球：国际化复制与机遇</h2>
+            <p class="text-center mb-6 max-w-3xl mx-auto text-gray-700">元话RWA凭借其“香港+西安”双引擎模式及跨境金融专长，助力中国优质资产对接国际资本，将境内成功的“私募信托通证化”模式，在国际市场转化为合规的证券型代币发行（STO）或通证化基金。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 text-[#073B4C]">国际主流RWA模式</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="font-medium text-[#118AB2]">1. 通证化基金</h4>
+                            <p class="text-sm">将传统基金份额（如PE基金、货币基金）通证化，提升流动性，降低门槛。例如，Hamilton Lane通过通证化将PE基金最低投资额从500万美元降至约2万美元（面向合格投资者）。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-[#06D6A0]">2. 证券型代币发行 (STO)</h4>
+                            <p class="text-sm">在符合证券法规框架下发行代表资产所有权（股权、债权、资产支持）的数字代币，为投资者提供法律保护和透明度。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 text-[#073B4C]">元话RWA的跨境赋能</h3>
+                     <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong class="text-[#FF6B6B]">国际视野与本土实践：</strong> 香港团队熟悉国际金融规则，西安团队负责技术与境内落地。</li>
+                        <li><strong class="text-[#FFD166]">跨境金融结构设计：</strong> 擅长LPF+QFLP等复杂跨境资金通道设计与执行。</li>
+                        <li><strong class="text-[#06D6A0]">数据合规保障：</strong> 遵循中国《数据出境新规》及国际GDPR等法规。</li>
+                        <li><strong class="text-[#118AB2]">多链部署策略：</strong> 支持境内联盟链/BSN及国际主流公链。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-6">
+                <h3 class="text-xl font-semibold mb-4 text-center text-[#073B4C]">境内与国际RWA私募发行模式比较</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 text-sm">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-3 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">特征</th>
+                                <th class="px-3 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">境内模式 (中国)</th>
+                                <th class="px-3 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">国际模式 (如香港STO)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-3 py-2 font-medium text-[#073B4C]">监管主体</td>
+                                <td class="px-3 py-2">国家金融监管总局/证监会</td>
+                                <td class="px-3 py-2">SFC(香港)/MAS(新加坡)/SEC(美国)等</td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-2 font-medium text-[#073B4C]">法律结构</td>
+                                <td class="px-3 py-2">信托结构 (信托受益权通证化)</td>
+                                <td class="px-3 py-2">STO (证券型代币) / 通证化基金 (SPV/基金)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-2 font-medium text-[#073B4C]">投资者基础</td>
+                                <td class="px-3 py-2">境内私域合格投资者 (人数限制严)</td>
+                                <td class="px-3 py-2">全球合格/认可投资者 (范围更广)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-2 font-medium text-[#073B4C]">流动性</td>
+                                <td class="px-3 py-2">私募为主，二级市场受限</td>
+                                <td class="px-3 py-2">可在受监管交易所上市，流动性更强</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-gray-500 mt-2 text-center">详细信息请参考完整报告中表3。</p>
+            </div>
+        </section>
+
+        <section id="future" class="py-8">
+            <h2 class="section-title">展望未来：风险管理与实施路线图</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 text-[#073B4C]">主要风险类别与元话对策</h3>
+                    <p class="text-sm mb-3">RWA通证化作为新兴领域，机遇与挑战并存。元话RWA通过“合规前置”和全面的风险管理框架为项目保驾护航。</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><span class="font-semibold text-[#FF6B6B]">⚖️ 监管与法律风险:</span> 政策不确定性、代币定性、数据合规。 <span class="text-xs text-gray-500">(对策: 持续法规追踪, 合规嵌入设计)</span></li>
+                        <li><span class="font-semibold text-[#FFD166]">💻 技术风险:</span> 智能合约漏洞、平台安全、区块链网络。 <span class="text-xs text-gray-500">(对策: 多方安全审计, 多层防御体系)</span></li>
+                        <li><span class="font-semibold text-[#06D6A0]">📈 市场风险:</span> 价格波动、流动性不足、估值不确定。 <span class="text-xs text-gray-500">(对策: AI辅助分析, 透明信息披露)</span></li>
+                        <li><span class="font-semibold text-[#118AB2]">⚙️ 运营与底层资产风险:</span> 流程执行、第三方、资产本身状况。 <span class="text-xs text-gray-500">(对策: 审慎伙伴选择, 持续监控预警)</span></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 text-[#073B4C]">分阶段实施路线图</h3>
+                    <div class="space-y-4">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-medium text-[#FF6B6B]">阶段1: 可行性研究与试点 (3-6个月)</h4>
+                            <p class="text-sm">验证模式合规性、技术可行性与市场接受度。产出：可行性与合规报告、详细方案。</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-medium text-[#FFD166]">阶段2: 私募发行与初步运营 (6-12个月)</h4>
+                            <p class="text-sm">完成首单通证化信托产品私募发行与初期运营。产出：完成募集、首期收益分配、运营报告。</p>
+                        </div>
+                        <div class="timeline-item" style="border-left-color: transparent;">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-medium text-[#06D6A0]">阶段3: 规模化与国际探索 (12个月+)</h4>
+                            <p class="text-sm">国内复制成功经验，逐步探索国际市场（STO/通证化基金）。产出：规模化运营报告、国际发行方案。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="py-12 bg-gradient-to-r from-[#073B4C] to-[#118AB2] text-white text-center rounded-lg">
+            <h2 class="text-3xl font-bold mb-4">携手共创数字资产新篇章</h2>
+            <p class="max-w-2xl mx-auto mb-6 text-lg">元话RWA与长安信托致力于通过合规创新，将RWA通证化的巨大潜力赋予实体商业，盘活存量资产，拓展融资渠道，并为合格投资者提供安全、透明、多元化的数字金融产品。我们相信，这是连接传统金融与数字未来的关键一步。</p>
+            <a href="http://metakina.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#FFD166] text-[#073B4C] font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-[#FFC300] transition duration-300 text-lg">
+                了解更多关于元话RWA
+            </a>
+             <a href="https://www.caitc.cn/" target="_blank" rel="noopener noreferrer" class="ml-4 inline-block bg-white text-[#118AB2] font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 text-lg">
+                访问长安信托官网
+            </a>
+        </section>
+    </main>
+
+    <footer class="text-center py-6 text-sm text-gray-600 border-t border-gray-200">
+        <p>&copy; 2025 元话RWA & 长安信托合作展望信息图。根据公开报告信息编制，仅供参考。</p>
+        <p class="text-xs mt-1">本信息图不构成任何投资建议。投资有风险，决策需谨慎。</p>
+    </footer>
+
+    <script>
+        function wrapLabel(str, maxWidth) {
+            if (!str) return '';
+            if (typeof str !== 'string') str = String(str);
+
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let currentLine = '';
+            const lines = [];
+            for (const word of words) {
+                if (currentLine.length === 0) { // First word of a new line
+                     if (word.length > maxWidth) { // Single word is too long
+                        // Split the very long word itself
+                        let tempWord = word;
+                        while(tempWord.length > maxWidth) {
+                            lines.push(tempWord.substring(0, maxWidth));
+                            tempWord = tempWord.substring(maxWidth);
+                        }
+                        if (tempWord.length > 0) currentLine = tempWord; else currentLine = '';
+                        continue;
+                    }
+                    currentLine = word;
+                } else if ((currentLine + ' ' + word).length <= maxWidth) {
+                    currentLine += ' ' + word;
+                } else {
+                    lines.push(currentLine);
+                    if (word.length > maxWidth) { // Next word is too long
+                        let tempWord = word;
+                        while(tempWord.length > maxWidth) {
+                            lines.push(tempWord.substring(0, maxWidth));
+                            tempWord = tempWord.substring(maxWidth);
+                        }
+                        if (tempWord.length > 0) currentLine = tempWord; else currentLine = '';
+                    } else {
+                       currentLine = word;
+                    }
+                }
+            }
+            if (currentLine) lines.push(currentLine);
+            return lines.length > 0 ? lines : [str];
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            if (!item) return '';
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        font: { size: 10 },
+                        color: '#073B4C'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#073B4C',
+                    titleFont: { size: 14, weight: 'bold'},
+                    bodyFont: { size: 12 },
+                    padding: 10,
+                    cornerRadius: 4
+                }
+            },
+            scales: {
+                x: {
+                    ticks: { 
+                        color: '#073B4C',
+                        font: { size: 10 },
+                        maxRotation: 45,
+                        minRotation: 0
+                    },
+                    grid: { display: false }
+                },
+                y: {
+                    ticks: { 
+                        color: '#073B4C',
+                        font: { size: 10 },
+                        callback: function(value) {
+                           if (value >= 1000000000000) return (value / 1000000000000) + '万亿';
+                           if (value >= 100000000) return (value / 100000000) + '亿';
+                           if (value >= 10000) return (value / 10000) + '万';
+                           return value;
+                        }
+                    },
+                    grid: { color: '#E0E0E0', borderDash: [2,4] }
+                }
+            }
+        };
+        
+        // Chart 1: RWA Market Growth
+        const rwaMarketGrowthCtx = document.getElementById('rwaMarketGrowthChart').getContext('2d');
+        new Chart(rwaMarketGrowthCtx, {
+            type: 'line',
+            data: {
+                labels: ['2022', '2024', '2026', '2028', '2030'].map(label => wrapLabel(label,16)),
+                datasets: [{
+                    label: 'RWA市场规模预测 (万亿美元)',
+                    data: [1, 4, 8, 12, 16],
+                    borderColor: '#06D6A0', // Caribbean Green
+                    backgroundColor: 'rgba(6, 214, 160, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: { ...commonChartOptions }
+        });
+
+        // Chart 2: Metakina Core Competencies
+        const metakinaCompetenciesCtx = document.getElementById('metakinaCompetenciesChart').getContext('2d');
+        new Chart(metakinaCompetenciesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['金融专长', '科技驱动', '合规保障'].map(label => wrapLabel(label,16)),
+                datasets: [{
+                    label: '核心竞争力占比',
+                    data: [35, 35, 30],
+                    backgroundColor: ['#FF6B6B', '#FFD166', '#118AB2'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { font: {size: 10}, color: '#073B4C' } },
+                    tooltip: { callbacks: { title: tooltipTitleCallback }, backgroundColor: '#073B4C' }
+                }
+            }
+        });
+
+        // Chart 3: Chang'an Trust Financials
+        const changanTrustFinancialsCtx = document.getElementById('changanTrustFinancialsChart').getContext('2d');
+        new Chart(changanTrustFinancialsCtx, {
+            type: 'bar',
+            data: {
+                labels: [['2022年', '营收'], ['2022年', '净利润'], ['2023上半年', '营收'], ['2023上半年', '净利润']].map(label => Array.isArray(label) ? label.map(l => wrapLabel(l,10)) : wrapLabel(label,16)),
+                datasets: [{
+                    label: '金额 (亿元人民币)',
+                    data: [15.40, 3.15, 5.72, 2.47],
+                    backgroundColor: ['#FF6B6B', '#FFD166', '#06D6A0', '#118AB2'],
+                    borderRadius: 4,
+                    barPercentage: 0.7
+                }]
+            },
+            options: { 
+                ...commonChartOptions,
+                scales: {
+                    ...commonChartOptions.scales,
+                    x: { ...commonChartOptions.scales.x, ticks: {...commonChartOptions.scales.x.ticks, font: {size: 9}}},
+                    y: { ...commonChartOptions.scales.y, title: { display: true, text: '亿元', font: {size:10}, color: '#073B4C'}}
+                },
+                plugins: { ...commonChartOptions.plugins, legend: { display: false } }
+             }
+        });
+
+    </script>
+</body>
+</html>
